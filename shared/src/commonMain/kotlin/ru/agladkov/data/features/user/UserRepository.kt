@@ -1,4 +1,10 @@
 package ru.agladkov.data.features.user
 
-class UserRepository {
+val userRepository = UserRepository()
+
+class UserRepository(
+
+) {
+
+    fun getAccessToken(): String = ""
 }

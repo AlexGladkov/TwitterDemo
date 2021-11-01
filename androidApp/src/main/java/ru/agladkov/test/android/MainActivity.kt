@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import ru.agladkov.test.android.screens.feed.FeedScreen
 
 fun greet(): String {
     return Greeting().greeting()
@@ -21,9 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            Box(modifier = Modifier.fillMaxSize()) {
-                Text(modifier = Modifier.align(Alignment.Center), text = greet())
-            }
+            FeedScreen()
         }
     }
 }

@@ -17,6 +17,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling:1.0.4")
     // Integration with ViewModels
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0")
+    implementation("androidx.compose.runtime:runtime-livedata:1.0.4")
 }
 
 android {

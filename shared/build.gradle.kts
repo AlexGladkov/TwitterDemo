@@ -11,24 +11,28 @@ version = "1.0"
 kotlin {
     android()
 
-//    val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget = when {
-//        System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64
+    val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget = when {
+        System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64
 //        System.getenv("NATIVE_ARCH")?.startsWith("arm") == true -> ::iosSimulatorArm64
-//        else -> ::iosX64
-//    }
-//
-//    iosTarget("ios") {}
+        else -> ::iosX64
+    }
 
-//    cocoapods {
-//        summary = "Some description for the Shared Module"
-//        homepage = "Link to the Shared Module homepage"
-//        ios.deploymentTarget = "14.1"
-//        frameworkName = "shared"
-//        podfile = project.file("../iosApp/Podfile")
-//    }
+    iosTarget("ios") {}
+
+    cocoapods {
+        summary = "Some description for the Shared Module"
+        homepage = "Link to the Shared Module homepage"
+        ios.deploymentTarget = "14.1"
+        frameworkName = "shared"
+        podfile = project.file("../iosApp/Podfile")
+    }
     
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
@@ -42,8 +46,9 @@ kotlin {
                 implementation("junit:junit:4.13.2")
             }
         }
-//        val iosMain by getting
-//        val iosTest by getting
+
+        val iosMain by getting
+        val iosTest by getting
     }
 }
 
