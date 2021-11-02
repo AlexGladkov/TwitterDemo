@@ -1,0 +1,16 @@
+PODS:
+  - TwitterShared (1.0)
+
+DEPENDENCIES:
+  - TwitterShared (from `../TwitterShared`)
+
+EXTERNAL SOURCES:
+  TwitterShared:
+    :path: "../TwitterShared"
+
+SPEC CHECKSUMS:
+  TwitterShared: f8141cda47523671ca480279ea6f838ab2dd12d3
+
+PODFILE CHECKSUM: cc59d4ddaa338010a9aacc5e7c6c2ae939b37670
+
+COCOAPODS: 1.10.1

@@ -8,4 +8,4 @@ pluginManagement {
 
 rootProject.name = "Test"
 include(":androidApp")
-include(":shared")
+include(":TwitterShared")
